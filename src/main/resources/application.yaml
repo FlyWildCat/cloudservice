@@ -1,0 +1,23 @@
+spring:
+  main:
+    banner-mode: "off"
+  datasource:
+      url: "jdbc:postgresql://localhost:5432/diploma"
+      username: "postgres"
+      password: "pda"
+  sql:
+    init:
+      continue-on-error: "true"
+  jpa:
+    hibernate:
+      ddl-auto: "validate"
+  liquibase:
+    enabled: "true"
+    change-log: "classpath:db/changelog/db.changelog-master.yaml"
+
+server:
+  port: 8080
+
+jwt:
+  sessionTime: 120000000
+  secret: "secret_key"
