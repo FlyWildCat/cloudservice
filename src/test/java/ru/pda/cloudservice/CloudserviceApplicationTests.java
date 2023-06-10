@@ -9,23 +9,23 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-//@Testcontainers
-//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Testcontainers
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CloudserviceApplicationTests {
 
-//	@Autowired
-//	private TestRestTemplate restTemplate;
-//
-//	@Container
-//	private final GenericContainer<?> cloudsrvice = new GenericContainer<>("cloudservice:1.0")
-//			.withExposedPorts(8080)
-//			;
+	@Autowired
+	private TestRestTemplate restTemplate;
+
+	@Container
+	private final GenericContainer<?> cloudsrvice = new GenericContainer<>("cloudservice:1.0")
+			.withExposedPorts(8080)
+			;
 
 	@Test
 	void contextLoads() {
-//		Integer port = cloudsrvice.getMappedPort(8080);
+		Integer port = cloudsrvice.getMappedPort(8080);
 
-//		ResponseEntity<?> entity = restTemplate.getForEntity("http://localhost:" + port + "/login", String.class);
+		ResponseEntity<?> entity = restTemplate.getForEntity("http://localhost:" + port + "/login", String.class);
 	}
 
 }
